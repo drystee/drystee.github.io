@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wills Gardening Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-white font-sans relative">
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <header class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50 p-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-white-400">Block with hole</h1>
+        <nav class="space-x-4">
+          <a href="#top" class="hover:text-yellow-400 transition">Home</a>
+          <a href="#about" class="hover:text-yellow-400 transition">About</a>
+          <a href="#order" class="hover:text-yellow-400 transition">Order</a>
+        </nav>
+      </header>
+
+      <main id="top" class="mt-24 flex flex-col items-center justify-center flex-grow text-center px-6 animate-fadein">
+        <h2 class="text-5xl mb-4 text-yellow-400 font-bold">Made with quality materials</h2>
+        <p class="text-xl max-w-xl mb-8">block with hole is designed for gardeners who value quality, durability, and love holes.</p>
+        <a href="order.html" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition">
+          Order now
+        </a>
+      </main>
+      </div>
+      <section
+        id="about"
+        class="px-10 py-20 max-w-4xl mx-auto space-y-8 opacity-0 translate-y-10 transition-opacity transition-transform duration-700 ease-out fadein-on-scroll"
+      >
+        <h2 class="text-4xl font-bold text-yellow-400">About Block with Hole</h2>
+        <p class="text-lg">Each tool is hand-crafted with premium materials and designed for real gardeners who know their way around a hole.</p>
+        <p class="text-lg">We pride ourselves on ethical sourcing and quality that lasts for generations.</p>
+        <p class="text-lg">Whether you’re planting, digging, or admiring your garden, our tool helps you dig deep—literally and metaphorically.</p>
+      </section>
+
+      <section id="order" class="px-10 py-20 max-w-4xl mx-auto space-y-8 fadein-on-scroll opacity-0 translate-y-10 transition-opacity transition-transform duration-700 ease-out">
+      <main class="px-6 py-16 max-w-lg mx-auto animate-fadein">
+        <h2 class="text-4xl font-bold mb-6 text-yellow-400">Order blocks with holes:</h2>
+          <form id="order" action="https://formspree.io/f/meokalvk" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 rounded bg-gray-800 text-white">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 rounded bg-gray-800 text-white">
+            <textarea name="message" placeholder="Your Message" required class="w-full px-4 py-2 rounded bg-gray-800 text-white"></textarea>
+            <button type="submit" class="bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-300 transition">
+              Submit
+            </button>
+          </form>
+      </main>
+</section>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0');
+        entry.target.classList.add('animate-fadein');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.fadein-on-scroll').forEach(el => observer.observe(el));
+</script>
