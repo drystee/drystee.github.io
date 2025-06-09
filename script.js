@@ -28,12 +28,12 @@
       "detect_on":"canvas",
       "events": {
         "onhover": {
-          "enable": true,
+          "enable": false,
           "mode": "repulse"
         }
       }
     },
-    "retina_detect": true
+    "retina_detect": false
   });
   
   const observer = new IntersectionObserver((entries) => {
@@ -44,7 +44,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.2 });
 
   document.querySelectorAll('.fadein-on-scroll').forEach(el => observer.observe(el));
 
@@ -56,4 +56,3 @@
       learnMore.classList.remove('opacity-0', 'pointer-events-none');
     }
   });
-
