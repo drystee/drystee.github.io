@@ -3,21 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wills Gardening Tool</title>
+    <title>website for will</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-    </style>
   </head>
 
   <body class="bg-black text-white font-sans relative">
+    <div id="particles-js" class="fixed inset-0 z-1"></div>
     <div class="relative z-10 min-h-screen flex flex-col">
       <header class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50 p-6 flex justify-between items-center">
         <h1 class="text-3xl font-bold text-white-400">Block with hole</h1>
@@ -36,15 +30,27 @@
         </a>
       </main>
       </div>
-      <section
-        id="about"
-        class="px-10 py-20 max-w-4xl mx-auto space-y-8 opacity-0 translate-y-10 transition-opacity transition-transform duration-700 ease-out fadein-on-scroll"
-      >
-        <h2 class="text-4xl font-bold text-yellow-400">About Block with Hole</h2>
-        <p class="text-lg">Each tool is hand-crafted with premium materials and designed for real gardeners who know their way around a hole.</p>
-        <p class="text-lg">We pride ourselves on ethical sourcing and quality that lasts for generations.</p>
-        <p class="text-lg">Whether you’re planting, digging, or admiring your garden, our tool helps you dig deep—literally and metaphorically.</p>
-      </section>
+    <section
+      id="about"
+      class="px-10 py-20 max-w-6xl mx-auto opacity-0 translate-y-10 transition-opacity transition-transform duration-700 ease-out fadein-on-scroll"
+    >
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="space-y-6 lg:w-1/2">
+          <h2 class="text-4xl font-bold text-yellow-400">About blocks with holes</h2>
+          <p class="text-lg">Each tool is hand-crafted with premium materials and stuff</p>
+          <p class="text-lg">Our blocks have huge holes that you can put different things inside</p>
+          <p class="text-lg">I dont know what else to write here.</p>
+        </div>
+
+        <div class="w-full lg:w-1/2">
+          <video autoplay muted loop playsinline class="rounded-xl shadow-lg w-full h-auto object-cover">
+            <source src="video.mp4" type="video/mp4" />
+            Your browser doesnt support videos lol
+          </video>
+        </div>
+      </div>
+    </section>
+
 
       <section id="order" class="px-10 py-20 max-w-4xl mx-auto space-y-8 fadein-on-scroll opacity-0 translate-y-10 transition-opacity transition-transform duration-700 ease-out">
       <main class="px-6 py-16 max-w-lg mx-auto animate-fadein">
@@ -60,21 +66,13 @@
       </main>
 </section>
 
+  <div id="learn-more" class="fixed bottom-6 inset-x-0 mx-auto w-fit flex flex-col items-center text-yellow-400 animate-bounce z-50 transition-opacity duration-500">
+    <span class="text-sm mb-1">Learn more</span>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
     <script src="script.js"></script>
   </body>
 </html>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0');
-        entry.target.classList.add('animate-fadein');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.fadein-on-scroll').forEach(el => observer.observe(el));
-</script>

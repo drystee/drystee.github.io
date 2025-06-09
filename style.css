@@ -20,3 +20,10 @@
 .delay-400 {
   animation-delay: 0.4s;
 }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
