@@ -7,7 +7,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.4 });
 
   document.querySelectorAll('.fadein-on-scroll').forEach(el => observer.observe(el));
 
@@ -87,3 +87,32 @@ const instanceOptions = {
   id: 'carousel',
   override: true
 };
+
+    particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 60,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#FF5C00"
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.5
+      },
+      "size": {
+        "value": 3
+      },
+      "move": {
+        "enable": true,
+        "speed": 1.5
+      }
+    },
+    "retina_detect": false
+  });
