@@ -26,7 +26,7 @@ html {
 }
 
 #default-carousel blockquote {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 25px;
   width: 60%;
   margin: 0 auto;
@@ -36,21 +36,21 @@ html {
   font-style: italic;
   margin-bottom: 0;
 }
-#default-carousel blockquote p::before,
-#default-carousel blockquote p::after {
+#default-carousel blockquote p::before {
   content: "“";
   font-family: Georgia, Times, serif;
-  font-size: 5rem;
-  position: absolute;
+  font-size: 2rem;
   opacity: 0.5;
-  color: rgba(0, 0, 0, 0.2);
-  top: 4rem;
-  right: 16rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 0.25rem;
 }
 #default-carousel blockquote p::after {
   content: "”";
-  right: -3rem;
-  top: -3rem;
+  font-family: Georgia, Times, serif;
+  font-size: 2rem;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 0.25rem;
 }
 
 body {
